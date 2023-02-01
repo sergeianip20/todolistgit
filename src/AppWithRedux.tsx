@@ -52,14 +52,14 @@ function AppWithRedux() {
 
         dispatch(CHangeTitleActionCreate(id, title))
 
-    }, [dispath]
+    }, [dispatch]
 )
 
      const  addTodolist = useCallback ( (title: string) =>  {
 
         dispatch(AddActionCreate(title))
     },
-    [dispath] )
+    [dispatch] )
     return (
         <div className="App">
             <AddItemForm addItem={addTodolist}/>
