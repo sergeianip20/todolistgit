@@ -41,25 +41,25 @@ function AppWithRedux() {
     const  changeFilter = useCallback( (value: FilterValuesType, todolistId: string) => {
 
         dispatch(CHangeFilterACtionCreate(value, todolistId))
-    }, [])
+    }, [dispatch])
 
     const  removeTodolist= useCallback( (id: string) => {
 
         dispatch(RemoveActionCreate(id))
-    },[])
+    },[dispatch])
 
     const  changeTodolistTitle = useCallback((id: string, title: string) => {
 
         dispatch(CHangeTitleActionCreate(id, title))
 
-    }, []
+    }, [dispath]
 )
 
      const  addTodolist = useCallback ( (title: string) =>  {
 
         dispatch(AddActionCreate(title))
     },
-    [] )
+    [dispath] )
     return (
         <div className="App">
             <AddItemForm addItem={addTodolist}/>
